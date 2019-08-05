@@ -31,8 +31,8 @@ def clean_data(df):
     df = df.drop(['Respondent', 'ExpectedSalary', 'Salary'], axis=1)
 
     # Fill numeric columns with the mean
-    num_vars = df.select_dtypes(include=['float', 'int']).columns
-    for col in num_vars:
+    num_var1 = df.select_dtypes(include=['float', 'int']).columns
+    for col in num_var1:
         df[col].fillna((df[col].mean()), inplace=True)
 
     # Dummy the categorical variables
